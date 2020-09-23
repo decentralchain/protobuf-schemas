@@ -1,12 +1,12 @@
 syntax = "proto3";
-package waves.node.grpc;
-option java_package = "com.wavesplatform.api.grpc";
-option csharp_namespace = "Waves.Node.Grpc";
-option go_package = "github.com/wavesplatform/gowaves/pkg/grpc/generated/waves/node/grpc";
+package unitoken.node.grpc;
+option java_package = "com.decentralchain.api.grpc";
+option csharp_namespace = "unitoken.Node.Grpc";
+option go_package = "github.com/decentralchain/gounitoken/pkg/grpc/generated/unitoken/node/grpc";
 
-import "waves/node/grpc/transactions_api.proto";
-import "waves/amount.proto";
-import "waves/transaction.proto";
+import "unitoken/node/grpc/transactions_api.proto";
+import "unitoken/amount.proto";
+import "unitoken/transaction.proto";
 import "google/protobuf/wrappers.proto";
 
 service AccountsApi {
@@ -32,7 +32,7 @@ message BalancesRequest {
 }
 
 message BalanceResponse {
-    message WavesBalances {
+    message unitokenBalances {
         int64 regular = 1;
         int64 generating = 2;
         int64 available = 3;
@@ -42,7 +42,7 @@ message BalanceResponse {
     }
 
     oneof balance {
-        WavesBalances waves = 1;
+        unitokenBalances unitoken = 1;
         Amount asset = 2;
     }
 }

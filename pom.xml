@@ -10,14 +10,14 @@
         <protoc.version>3.11.0</protoc.version>
     </properties>
 
-    <groupId>com.wavesplatform</groupId>
+    <groupId>com.decentralchain</groupId>
     <artifactId>protobuf-schemas</artifactId>
     <packaging>jar</packaging>
     <version>1.2.7-SNAPSHOT</version>
 
-    <name>Waves Node protobuf classes</name>
-    <description>Waves Node protobuf java classes</description>
-    <url>https://github.com/wavesplatform/protobuf-schemas</url>
+    <name>unitoken Node protobuf classes</name>
+    <description>unitoken Node protobuf java classes</description>
+    <url>https://github.com/decentralchain/protobuf-schemas</url>
 
     <licenses>
         <license>
@@ -28,16 +28,16 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/wavesplatform/protobuf-schemas</url>
+        <url>https://github.com/decentralchain/protobuf-schemas</url>
     </scm>
 
     <developers>
         <developer>
             <id>vgavrilin</id>
             <name>Valeriy Gavrilin</name>
-            <email>vgavrilin@wavesplatform.com</email>
-            <organization>Waves</organization>
-            <organizationUrl>https://wavesplatform.com</organizationUrl>
+            <email>vgavrilin@decentralchain.com</email>
+            <organization>unitoken</organization>
+            <organizationUrl>https://decentralchain.com</organizationUrl>
             <roles>
                 <role>Developer</role>
             </roles>

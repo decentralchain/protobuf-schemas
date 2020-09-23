@@ -1,5 +1,5 @@
 [package]
-name = "waves-protobuf-schemas"
+name = "unitoken-protobuf-schemas"
 version = "1.2.7-SNAPSHOT"
 edition = "2018"
 

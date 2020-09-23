@@ -1,12 +1,12 @@
 # About
-Waves protobuf schemas repository
+unitoken protobuf schemas repository
 
 # How to use
 ## Java
 Add dependency to your `pom.xml`
 ```xml
 <dependency>
-    <groupId>com.wavesplatform</groupId>
+    <groupId>com.decentralchain</groupId>
     <artifactId>protobuf-schemas</artifactId>
     <version>{version}</version>
 </dependency>
@@ -14,13 +14,13 @@ Add dependency to your `pom.xml`
 ## ScalaPB
 1. Add dependency to your `build.sbt`: 
 ```scala
-libraryDependencies += ("com.wavesplatform" % "protobuf-schemas" % "{version}" classifier "proto") % "protobuf"
+libraryDependencies += ("com.decentralchain" % "protobuf-schemas" % "{version}" classifier "proto") % "protobuf"
 ```
 2. Configure ScalaPB to compile external schemas with:
 ```scala
 inConfig(Compile)(Seq(
    PB.protoSources in Compile := Seq(PB.externalIncludePath.value),
-   includeFilter in PB.generate := new SimpleFileFilter((f: File) => f.getName.endsWith(".proto") && f.getParent.endsWith("waves")),
+   includeFilter in PB.generate := new SimpleFileFilter((f: File) => f.getName.endsWith(".proto") && f.getParent.endsWith("unitoken")),
    PB.targets += scalapb.gen(flatPackage = true) -> sourceManaged.value
  ))
 ```
@@ -29,26 +29,26 @@ inConfig(Compile)(Seq(
 resolvers += Resolver.sonatypeRepo("snapshots")
 ```
 ## JavaScript
-Npm package: `@waves/protobuf-serialization`.
+Npm package: `@unitoken/protobuf-serialization`.
 
 It contains generated JavaScript classes, TypeScript definitions as well as raw proto files. The default build uses CommonJS and includes all of the proto files. We used `pbjs` to build JavaScript and `pbts` to build TypeScript definitions.
 
-You could also make your own custom build from raw `.proto` files, for example, if you want to use only a subset of proto schemas or gRPC services. They can be found in `@waves/protobuf-serialization/proto` directory.
+You could also make your own custom build from raw `.proto` files, for example, if you want to use only a subset of proto schemas or gRPC services. They can be found in `@unitoken/protobuf-serialization/proto` directory.
 
 `long.js` is used for 64-bit integers: `int64`, `uint64`, etc.
 
 Example:
-1. `npm install --save @waves/protobuf-serialization`
+1. `npm install --save @unitoken/protobuf-serialization`
 2. Default build usage
 ```javascript
-import { waves } from '@waves/protobuf-serialization';
+import { unitoken } from '@unitoken/protobuf-serialization';
 
-const block = new waves.Block();
+const block = new unitoken.Block();
 block.header = // ... set necessary fields
 
-const buffer = waves.Block.encode(block);
+const buffer = unitoken.Block.encode(block);
 
-const blockDecoded = waves.Block.decode(buffer);
+const blockDecoded = unitoken.Block.decode(buffer);
 ```
 
 ## C#
@@ -56,9 +56,9 @@ const blockDecoded = waves.Block.decode(buffer);
 2. Add 
 ```
   <ItemGroup>
-    <Protobuf Include="proto\waves\*.proto" OutputDir="waves\%(RelativePath)" GrpcServices="None" />
-    <Protobuf Include="proto\waves\events\*.proto" OutputDir="waves\events\%(RelativePath)" GrpcServices="None" />
-    <Protobuf Include="proto\waves\node\grpc\*.proto" OutputDir="waves\node\grpc\%(RelativePath)" GrpcServices="Both" />
+    <Protobuf Include="proto\unitoken\*.proto" OutputDir="unitoken\%(RelativePath)" GrpcServices="None" />
+    <Protobuf Include="proto\unitoken\events\*.proto" OutputDir="unitoken\events\%(RelativePath)" GrpcServices="None" />
+    <Protobuf Include="proto\unitoken\node\grpc\*.proto" OutputDir="unitoken\node\grpc\%(RelativePath)" GrpcServices="Both" />
   </ItemGroup>
 ```
 to your `.csproj` file. After this just build your project.
@@ -66,13 +66,13 @@ to your `.csproj` file. After this just build your project.
 or as alternative you can use util protoc, for example:
 ``` protoc --csharp_out=RelativePath  --proto_path=RelativePathToProtoDir RelativePathToProtoFile```
 
-Also there is a NuGet package WavesPlatform.ProtobufSchema with this project.
+Also there is a NuGet package decentralchain.ProtobufSchema with this project.
 
 ## Rust
 Add dependency to your `Cargo.toml`
 ```toml
 [dependencies]
-waves-protobuf-schemas = { git = "https://github.com/wavesplatform/protobuf-schemas" }
+unitoken-protobuf-schemas = { git = "https://github.com/decentralchain/protobuf-schemas" }
 ```
 
 # How to compile locally

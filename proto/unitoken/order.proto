@@ -1,10 +1,10 @@
 syntax = "proto3";
-package waves;
-option java_package = "com.wavesplatform.protobuf.order";
-option csharp_namespace = "Waves";
-option go_package = "github.com/wavesplatform/gowaves/pkg/grpc/generated/waves";
+package unitoken;
+option java_package = "com.decentralchain.protobuf.order";
+option csharp_namespace = "unitoken";
+option go_package = "github.com/decentralchain/gounitoken/pkg/grpc/generated/unitoken";
 
-import "waves/amount.proto";
+import "unitoken/amount.proto";
 
 message AssetPair {
     bytes amount_asset_id = 1;

@@ -1,0 +1,10 @@
+syntax = "proto3";
+package unitoken;
+option java_package = "com.decentralchain.protobuf";
+option csharp_namespace = "unitoken";
+option go_package = "github.com/decentralchain/gounitoken/pkg/grpc/generated/unitoken";
+
+message Amount {
+    bytes asset_id = 1;
+    int64 amount = 2;
+};

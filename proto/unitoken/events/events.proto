@@ -1,10 +1,10 @@
 syntax = "proto3";
-package waves.events;
-option java_package = "com.wavesplatform.events.protobuf";
+package unitoken.events;
+option java_package = "com.decentralchain.events.protobuf";
 
-import "waves/block.proto";
-import "waves/amount.proto";
-import "waves/transaction.proto";
+import "unitoken/block.proto";
+import "unitoken/amount.proto";
+import "unitoken/transaction.proto";
 
 message BlockchainUpdated {
     bytes id = 1;
@@ -13,7 +13,7 @@ message BlockchainUpdated {
     message Append {
         message BlockAppend {
             Block block = 1;
-            int64 updated_waves_amount = 2;
+            int64 updated_unitoken_amount = 2;
         }
 
         message MicroBlockAppend {

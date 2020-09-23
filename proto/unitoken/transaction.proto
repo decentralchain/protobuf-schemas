@@ -1,13 +1,13 @@
 syntax = "proto3";
-package waves;
+package unitoken;
 
-option java_package = "com.wavesplatform.protobuf.transaction";
-option csharp_namespace = "Waves";
-option go_package = "github.com/wavesplatform/gowaves/pkg/grpc/generated/waves";
+option java_package = "com.decentralchain.protobuf.transaction";
+option csharp_namespace = "unitoken";
+option go_package = "github.com/decentralchain/gounitoken/pkg/grpc/generated/unitoken";
 
-import "waves/amount.proto";
-import "waves/recipient.proto";
-import "waves/order.proto";
+import "unitoken/amount.proto";
+import "unitoken/recipient.proto";
+import "unitoken/order.proto";
 
 message SignedTransaction {
     Transaction transaction = 1;

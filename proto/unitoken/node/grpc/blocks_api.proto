@@ -1,10 +1,10 @@
 syntax = "proto3";
-package waves.node.grpc;
-option java_package = "com.wavesplatform.api.grpc";
-option csharp_namespace = "Waves.Node.Grpc";
-option go_package = "github.com/wavesplatform/gowaves/pkg/grpc/generated/waves/node/grpc";
+package unitoken.node.grpc;
+option java_package = "com.decentralchain.api.grpc";
+option csharp_namespace = "unitoken.Node.Grpc";
+option go_package = "github.com/decentralchain/gounitoken/pkg/grpc/generated/unitoken/node/grpc";
 
-import "waves/block.proto";
+import "unitoken/block.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/wrappers.proto";
 

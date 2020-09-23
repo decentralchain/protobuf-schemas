@@ -1,11 +1,11 @@
 syntax = "proto3";
-package waves.node.grpc;
-option java_package = "com.wavesplatform.api.grpc";
-option csharp_namespace = "Waves.Node.Grpc";
-option go_package = "github.com/wavesplatform/gowaves/pkg/grpc/generated/waves/node/grpc";
+package unitoken.node.grpc;
+option java_package = "com.decentralchain.api.grpc";
+option csharp_namespace = "unitoken.Node.Grpc";
+option go_package = "github.com/decentralchain/gounitoken/pkg/grpc/generated/unitoken/node/grpc";
 
-import "waves/transaction.proto";
-import "waves/node/grpc/accounts_api.proto";
+import "unitoken/transaction.proto";
+import "unitoken/node/grpc/accounts_api.proto";
 
 service AssetsApi {
     rpc GetInfo (AssetRequest) returns (AssetInfoResponse);
